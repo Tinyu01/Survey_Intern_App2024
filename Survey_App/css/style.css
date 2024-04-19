@@ -1,0 +1,35 @@
+html {
+    height: 100%;
+    width: 100%;
+  
+    
+     .body .mainhead {
+          margin:-3% 0;
+          background-color:#0D7377;
+          font-size:30px;
+          text-align:center;
+          color:black;
+         }
+  
+     .body .button1 .button { 
+  
+        width:25%;
+          margin:2% 35%;
+          font-size:35px;
+        background-color:#E8E8E8;
+          color:black;
+                  
+      }
+  
+    .body .button2 .button {
+  
+        width:25%;
+          margin:2% 35%;
+          font-size:35px;
+        background-color:#E8E8E8;
+          color:black;
+              
+      }
+  
+    
+  }
