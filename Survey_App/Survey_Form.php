@@ -37,41 +37,39 @@
         font-size: 25px;
   }
 
-  .survey .lables-inputs {
-        font-size: 25px;
-        margin:0 5%;
+  .survey .lables-inputs .l {
+        font-size: 23px;
+        margin:0 25%;
   }
-  .survey .lables-inputs .surname {
+  .survey .lables-inputs .fullnames {
     font-size: 20px;
-    margin:0 14.6%;
+    margin:0 25%;
   }
-  .survey .lables-inputs .names {
+  .survey .lables-inputs .email {
     font-size: 20px;
-    margin:0 11.8%;
+    margin:0 25%;
   }
   .survey .lables-inputs .contact {
     font-size: 20px;
-    margin:0 8%;
+    margin:0 25%;
   }
   .survey .lables-inputs .date {
     font-size: 20px;
-    margin:0 18.7%;
+    margin:0 25%;
   }
-  .survey .lables-inputs .age {
-    font-size: 20px;
-    margin:0 19.3%;
-  }
-
+ 
   .survey .lables-inputs select {
     font-size: 25px;
     margin:0 15.3%;
   }
 
   .survey .favaurite-food {
-
+    font-size: 25px;
     margin:2% 0;
 
   }
+
+  
 
   .survey .scale-table {
     margin:2% 0;
@@ -102,7 +100,7 @@
       
       <div class="mainhead">
     
-        <h1>Take Our Survey</h1>
+        <h1>FILL OUT SURVEY</h1>
     
       </div>
        
@@ -111,58 +109,23 @@
         <div class="personal-details">
 
           <div class="top-lable">
-            <label><b>Person Contact:</b></label>
-          </div>
-
-          <div class="lables-inputs">
-
-            <br><label for="contact"><b>Choose:</b></label>
-	          <select name="contact" id="contact">
-            <option value="">Contact</option>
-            </select>              
-        
-            <br><label><b>First Names</b></label>
-	          <input class="names" type="text" placeholder="Enter your First Names..." name="names" required/>
-        
-            <br><label><b>Contact Number</b></label>
-	          <input class="contact" type="text" placeholder="Your Contact Number..." name="Contact" required/>
-        
-            <br><label><b>Date</b></label>
-            <input class="date" type="date" name="date" required/>
-	
-	          <br><label><b>Age</b></label>
-	          <input class="age" type="number" placeholder="Enter Your Age..." name="age" required/>
-
-          </div>
-	        
-        </div>
-        <br>
-        <hr>
-
-        <div class="personal-details">
-
-          <div class="top-lable">
             <label><b>Personal Details:</b></label>
           </div>
 
           <div class="lables-inputs">
 
-            <br><label><b>Contact:</b></label>
-	          <input class="surname" type="text" placeholder="Entrer Your Surname..." name="surname" required/>
+            <label class="l">Full Names</label>
+	          <br> <input class="fullnames" type="text" placeholder="Entrer your Full Names..." name="fullnames" required/> <br>
         
-            <br><label><b>First Names</b></label>
-	          <input class="names" type="text" placeholder="Enter your First Names..." name="names" required/>
+            <br><label class="l">Email</label>
+	          <br> <input class="email" type="email" placeholder="Enter your Email..." name="email" required/> <br>
         
-            <br><label><b>Contact Number</b></label>
-	          <input class="contact" type="text" placeholder="Your Contact Number..." name="Contact" required/>
-        
-            <br><label><b>Date</b></label>
-            <input class="date" type="date" name="date" required/>
-	
-	          <br><label><b>Age</b></label>
-	          <input class="age" type="number" placeholder="Enter Your Age..." name="age" required/>
+            <br><label class="l">Date of Birth</label>
+            <br> <input class="date" type="date" name="date" required/> <br>
 
-
+            <br><label class="l">Contact Number</label>
+	          <br> <input class="contact" type="number" placeholder="Your Contact Number..." name="Contact" required/> <br> 
+        
 
           </div>
 	        
@@ -172,42 +135,24 @@
 
         <div class="favaurite-food">
 
-          <div class="top-lable">
-            <label><b>What is your favourite food? (You can choose more than 1 answer)</b></label>
-          </div>
-
-          <div class="checkbox-inputs">
+            <label><b>What is your favourite food?</b></label>
 
             <label>
-              <input type="checkbox"  name="pizza">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Pizza</b>
+              <input class="c" type="checkbox" name="pizza">&nbsp;<b>Pizza</b>
             </label>
         
-            <br>
             <label>
-              <input type="checkbox"  name="pasta">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Pasta</b>
+              <input class="c" type="checkbox" name="pasta">&nbsp;<b>Pasta</b>
             </label>
         
-            <br>
             <label>
-              <input type="checkbox"  name="pap-wors">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Pap and Wors</b>
+              <input class="c" type="checkbox" name="pap-wors">&nbsp;<b>Pap and Wors</b>
             </label>
-	
-	          <br>
+            
             <label>
-              <input type="checkbox"  name="chicken-stir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Chicken Stir Fry</b>
+              <input class="c" type="checkbox" name="other">&nbsp;<b>Other</b>
             </label>
 
-            <br>
-            <label>
-              <input type="checkbox"  name="beef-stir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Beef Stir Fry</b>
-            </label>
-
-            <br>
-            <label>
-              <input type="checkbox"  name="other">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Other</b>
-            </label>
-
-          </div>
 
         </div>
         <hr>
@@ -294,293 +239,3 @@
 
 </html>
 
-<?php
-
-  //connection to database
-  $conn=mysqli_connect("localhost","root","","survey");
-
-  // create short variable names
-  $surname= mysqli_real_escape_string($conn,$_POST['surname']);
-  $names= mysqli_real_escape_string($conn,$_POST['names']);
-  $contact= mysqli_real_escape_string($conn,$_POST['Contact']);
-  $date= mysqli_real_escape_string($conn,$_POST['date']);
-  $age= mysqli_real_escape_string($conn,$_POST['age']);
-
-  //run insert
-  $insertclient = "INSERT INTO client (Contact, Surname, Names, Age, TodayDate) VALUES ('$contact','$surname', '$names', '$age', '$date');";
-  $intclient = mysqli_query($conn,$queryclient);
-
-  
-
-
-  if(isset($_POST['submit'])) { 
-
-    //check box variable
-    $chpizza = "";
-    $chpasta = "";
-    $chpap = "";
-    $chchicken = "";
-    $chbeef = "";
-    $chother = "";
-
-    //radio button variaable
-    $reat = "";
-    $rmovie = "";
-    $rtv = "";
-    $rradio = "";
-
-    //checking if radio button are all checked
-    if($_SERVER["REQUEST_METHOD"]=="POST") {
-
-      if(empty($_POST["pizza"]) && empty($_POST["pasta"]) && empty($_POST["pap-wors"]) && empty($_POST["chicken-stir"]) 
-      && empty($_POST["beef-stir"]) && empty($_POST["other"]) ) {
-
-        $chother = "At least check other";
-        
-        echo '<script type="text/javaScript">alert("'.$chother.'");</script>';
-        echo '<script type="text/JavaScript"> window.location= "take_survey.php" ; </script>';
-
-      }else {
-
-        if(empty($_POST["eatout"]) || empty($_POST["watchmovie"]) || empty($_POST["watchtv"]) || empty($_POST["listenradio"])) {
-
-          $reat = " Click at least one radio button in row 1 in the table' '";
-          $rmovie = "Click at least one radio button in row 2 in the table' '";
-          $rtv = "Click at least one radio button in row 3 in the ' ' ";
-          $rradio = "Click at least one radio button in row 1 in the table' '";
-  
-          echo '<script type="text/javaScript">alert("'.$reat.$rmovie.$rtv.$rradio.'");</script>';
-          echo '<script type="text/JavaScript"> window.location= "take_survey.php" ; </script>';
-  
-        }else {
-
-          //validating and inserting data in table meal
-          if(isset($_POST['pizza'])) { 
-          
-            $chpizza = mysqli_real_escape_string($conn,$_POST['pizza']);
-
-            $queryfood = "SELECT * FROM food WHERE FoodID='$chpizza'";
-            
-            $resultfood = mysqli_query($conn,$queryfood);
-
-            $rowfood = mysqli_fetch_array($resultfood)
-
-            $chpizzae = $rowfood['FoodID'];
-            $chname =  $rowfood['FoodName']; 
-          
-            $insertmeal = "INSERT INTO meal (Contact, FoodID, FooDName) VALUES ('$contact', '$chpizza', '$chname');";
-            $inmeal = mysqli_query($conn,$insertmeal);
-
-          } elseif(isset($_POST['pasta'])) {
-
-            $chpasta = mysqli_real_escape_string($conn,$_POST['pasta']);
-
-            $queryfood = "SELECT * FROM food WHERE FoodID='$chpasta'";
-
-            $resultfood = mysqli_query($conn,$queryfood);
-
-            $rowfood = mysqli_fetch_array($resultfood)
-
-            $chpizza = $rowfood['FoodID'];
-            $chname =  $rowfood['FoodName'];
-
-            $insertmeal = "INSERT INTO meal (Contact, FoodID, FooDName) VALUES ('$contact', '$chpizza', '$chname');";
-            $inmeal = mysqli_query($conn,$insertmeal);
-
-          } elseif(isset($_POST['pap-wors'])) {
-
-            $chpap = mysqli_real_escape_string($conn,$_POST['pap-wors']);
-
-            $queryfood = "SELECT * FROM food WHERE FoodID='$chpap'";
-          
-            $resultfood = mysqli_query($conn,$queryfood);
-
-            $rowfood = mysqli_fetch_array($resultfood)
-
-            $chpizza = $rowfood['FoodID'];
-            $chname =  $rowfood['FoodName'];
-
-            $insertmeal = "INSERT INTO meal (Contact, FoodID, FooDName) VALUES ('$contact', '$chpizza', '$chname');";
-            $inmeal = mysqli_query($conn,$insertmeal);
-
-          } elseif(isset($_POST['chicken-stir'])) {
-
-            $chchicken = mysqli_real_escape_string($conn,$_POST['chicken-stir']);
-
-            $queryfood = "SELECT * FROM food WHERE FoodID='$chchicken'";
-
-            $resultfood = mysqli_query($conn,$queryfood);
-
-            $rowfood = mysqli_fetch_array($resultfood)
-
-            $chpizza = $rowfood['FoodID'];
-            $chname =  $rowfood['FoodName'];
-
-            $insertmeal = "INSERT INTO meal (Contact, FoodID, FooDName) VALUES ('$contact', '$chpizza', '$chname');";
-            $inmeal = mysqli_query($conn,$insertmeal);
-
-
-          } elseif(isset($_POST['beef-stir'])) {
-
-            $chbeef = mysqli_real_escape_string($conn,$_POST['beef-stir']);
-
-            $queryfood = "SELECT * FROM food WHERE FoodID='$chbeef'";
-
-            $resultfood = mysqli_query($conn,$queryfood);
-
-            $rowfood = mysqli_fetch_array($resultfood)
-
-            $chpizza = $rowfood['FoodID'];
-            $chname =  $rowfood['FoodName'];
-
-            $insertmeal = "INSERT INTO meal (Contact, FoodID, FooDName) VALUES ('$contact', '$chpizza', '$chname');";
-            $inmeal = mysqli_query($conn,$insertmeal);
-
-          } else {
-
-            $chother = mysqli_real_escape_string($conn,$_POST['other']);
-
-            $queryfood = "SELECT * FROM food WHERE FoodID='$chother'";
-
-            $resultfood = mysqli_query($conn,$queryfood);
-
-            $rowfood = mysqli_fetch_array($resultfood)
-
-            $chpizza = $rowfood['FoodID'];
-            $chname =  $rowfood['FoodName'];
-
-            $insertmeal = "INSERT INTO meal (Contact, FoodID, FooDName) VALUES ('$contact', '$chpizza', '$chname');";
-            $inmeal = mysqli_query($conn,$insertmeal);
-
-          }
-
-          //codition to insert value in table activity and ratting
-          if(isset($_POST['eatout'])) {
-
-            $scale = mysqli_real_escape_string($conn,$_POST['eatout']);
-
-            $querysc = "SELECT * FROM scale WHERE ScaleID='$scale'";
-
-            $resultsc = mysqli_query($conn,$querysc);
-
-            $rowsc = mysqli_fetch_array($resultsc)
-
-            $scid = $rowsc['ScaleID'];
-            $scname =  $rowsc['ScaleName'];
-
-            $queryho = "SELECT * FROM hobby WHERE Hobby='1'";
-
-            $resultho = mysqli_query($conn,$queryho);
-
-            $rowho = mysqli_fetch_array($resultho)
-
-            $rdeat = $rowho['HobbyID'];
-            $rdname =  $rowho['HobbyName'];
-
-            $insertratting = "INSERT INTO ratting (ScaleID, ScaleName, HobbyID, HobbyName) VALUES ('$scid','$scname', '$rdeat', '$rdname');";
-            $inmeal = mysqli_query($conn,$insertratting);
-
-            $insertact = "INSERT INTO activity (Contact, HobbyID, HobbyName) VALUES ('$contact', '$rdeat', '$rdname');";
-            $inmeal = mysqli_query($conn,$insertact);
-           
-
-          }elseif(isset($_POST['watchmovie'])) {
-
-            $scale = mysqli_real_escape_string($conn,$_POST['watchmovie']);
-
-            $querysc = "SELECT * FROM scale WHERE ScaleID='$scale'";
-
-            $resultsc = mysqli_query($conn,$querysc);
-
-            $rowsc = mysqli_fetch_array($resultsc)
-
-            $scid = $rowsc['ScaleID'];
-            $scname =  $rowsc['ScaleName'];
-
-            $queryho = "SELECT * FROM hobby WHERE Hobby='2'";
-
-            $resultho = mysqli_query($conn,$queryho);
-
-            $rowho = mysqli_fetch_array($resultho)
-
-            $rdeat = $rowho['HobbyID'];
-            $rdname =  $rowho['HobbyName'];
-
-            $insertratting = "INSERT INTO ratting (ScaleID, ScaleName, HobbyID, HobbyName) VALUES ('$scid','$scname', '$rdeat', '$rdname');";
-            $inmeal = mysqli_query($conn,$insertratting);
-
-            $insertact = "INSERT INTO activity (Contact, HobbyID, HobbyName) VALUES ('$contact', '$rdeat', '$rdname');";
-            $inmeal = mysqli_query($conn,$insertact);
-            
-
-          }elseif(isset($_POST['watchtv'])) {
-
-            $scale = mysqli_real_escape_string($conn,$_POST['watchtv']);
-
-            $querysc = "SELECT * FROM scale WHERE ScaleID='$scale'";
-
-            $resultsc = mysqli_query($conn,$querysc);
-
-            $rowsc = mysqli_fetch_array($resultsc)
-
-            $scid = $rowsc['ScaleID'];
-            $scname =  $rowsc['ScaleName'];
-
-            $queryho = "SELECT * FROM hobby WHERE Hobby='3'";
-
-            $resultho = mysqli_query($conn,$queryho);
-
-            $rowho = mysqli_fetch_array($resultho)
-
-            $rdeat = $rowho['HobbyID'];
-            $rdname =  $rowho['HobbyName'];
-
-            $insertratting = "INSERT INTO ratting (ScaleID, ScaleName, HobbyID, HobbyName) VALUES ('$scid','$scname', '$rdeat', '$rdname');";
-            $inmeal = mysqli_query($conn,$insertratting);
-
-            $insertact = "INSERT INTO activity (Contact, HobbyID, HobbyName) VALUES ('$contact', '$rdeat', '$rdname');";
-            $inmeal = mysqli_query($conn,$insertact);
-            
-
-          }else(isset($_POST['listenradio'])) {
-
-            $scale = mysqli_real_escape_string($conn,$_POST['listenradio']);
-
-            $querysc = "SELECT * FROM scale WHERE ScaleID='$scale'";
-
-            $resultsc = mysqli_query($conn,$querysc);
-
-            $rowsc = mysqli_fetch_array($resultsc)
-
-            $scid = $rowsc['ScaleID'];
-            $scname =  $rowsc['ScaleName'];
-
-            $queryho = "SELECT * FROM hobby WHERE Hobby='4'";
-
-            $resultho = mysqli_query($conn,$queryho);
-
-            $rowho = mysqli_fetch_array($resultho)
-
-            $rdeat = $rowho['HobbyID'];
-            $rdname =  $rowho['HobbyName'];
-
-            $insertratting = "INSERT INTO ratting (ScaleID, ScaleName, HobbyID, HobbyName) VALUES ('$scid','$scname', '$rdeat', '$rdname');";
-            $inmeal = mysqli_query($conn,$insertratting);
-
-            $insertact = "INSERT INTO activity (Contact, HobbyID, HobbyName) VALUES ('$contact', '$rdeat', '$rdname');";
-            $inmeal = mysqli_query($conn,$insertact);
-            
-          }
-
-         
-        }
-        
-        echo '<script type="text/JavaScript"> window.location= "index.php" ; </script>';
-      }
-
-   
-    }
-
-  } 
-
-?>

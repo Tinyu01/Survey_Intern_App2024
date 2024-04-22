@@ -85,14 +85,13 @@
 <?php
 
     if(isset($_POST['survey'])) {
-
-        echo '<script type="text/JavaScript"> window.location= "take_survey.php" ; </script>';
    
+        echo '<script type="text/JavaScript"> window.location= "Survey_Form.php" ; </script>';
     } 
 
     if(isset($_POST['results'])) {
    
-        echo '<script type="text/JavaScript"> window.location= "output-page.php" ; </script>';
+        echo '<script type="text/JavaScript"> window.location= "Output_Form.php" ; </script>';
     } 
 
 ?>
