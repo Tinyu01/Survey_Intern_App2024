@@ -1,1 +1,30 @@
 This is a Repository for a WebApp that can be placed in a public space where people can use it to survey with it. But using this webApp you can take out survey to analyse date collecte.
+
+// Frontend: Styling with TailwindCSS
+// Install TailwindCSS via npm and configure in the frontend directory. Full setup guides are available online.
+
+// README.md
+/**
+# Survey Application
+
+## Setup Instructions
+
+### Backend
+1. Navigate to the `backend` folder.
+2. Install dependencies: `npm install`.
+3. Run the server: `node app.js`.
+
+### Frontend
+1. Navigate to the `frontend` folder.
+2. Install dependencies: `npm install`.
+3. Start the development server: `npm start`.
+
+## Tech Stack
+- Frontend: React.js, TailwindCSS.
+- Backend: Node.js, Express.js, SQLite, Sequelize.
+
+## Usage Guidelines
+1. Open the application.
+2. Fill out the survey to submit data.
+3. View results to analyze the collected data.
+**/
